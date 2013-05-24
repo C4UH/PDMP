@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema version="PMP Interconnect v3.0.0-ov2"
+  targetNamespace="http://pmpi.nabp.org/" 
+  elementFormDefault="qualified" 
+  attributeFormDefault="unqualified"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:pmpi="http://pmpi.nabp.org/" >
+
+  <xsd:include schemaLocation="../xsd/pmpi/pmp-interconnect.xsd" />
+
+  <xsd:element name="PmpPong" type="pmpi:PmpPongType" />
+
+  <xsd:complexType name="PmpPongType">
+    <xsd:sequence>
+      <xsd:element name="PingReceived" type="pmpi:PingReceivedType" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>
+

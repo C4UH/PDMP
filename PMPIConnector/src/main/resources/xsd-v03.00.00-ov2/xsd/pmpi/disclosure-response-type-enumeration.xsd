@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema version="PMP Interconnect v3.0.0-ov2"
+  targetNamespace="http://pmpi.nabp.org/" 
+  elementFormDefault="qualified" 
+  attributeFormDefault="unqualified"
+  xmlns:pmpi="http://pmpi.nabp.org/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+
+  <xsd:simpleType name="DisclosureResponseTypeEnumeration">
+  
+    <xsd:annotation>
+      <xsd:documentation>
+        These are the values that are valid for the pmpi:Type element.
+      </xsd:documentation>
+    </xsd:annotation>
+  
+    <xsd:restriction base="xsd:string">
+      
+      <xsd:enumeration value="complete">
+        <xsd:annotation>
+          <xsd:documentation>
+            The search was processed by the PMP and the disclosure is
+            enclosed.  
+            
+            The PMP system MUST provide a pmpi:EncryptedData element.
+            The encrypted contents of that element MUST validate against
+            pmp:RequestResponsePrescriptionReport from the PMIX NIEM
+            IEPD dated
+
+            The pmpi:PlaintextData element WILL NOT be present.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="deferred">
+        <xsd:annotation>
+          <xsd:documentation>
+            The PMP system received the search request but it cannot process the
+            request within the time allotted within a synchronous request so the
+            PMP from which disclosure is sought is deferring its response. 
+            
+            The pmpi:EncryptedData element MUST NOT be present.
+
+            When a PMP defers its response it SHOULD provide a value
+            detailing the deferral reason via pmpi:PlaintextData. 
+            
+            Searching PMPs that cannot process deferred responses should
+            ensure that they cancel the deferred request by configuring
+            the PMP to autocancel in the Interconnect console or by
+            implementing autocancel themselves by immediately invoking
+            the cancel operation when a deferred response type is
+            received.  If autocancel is implemented in the console the
+            message provided in the console will be appended to any
+            message received from the PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="disallowed">
+        <xsd:annotation>
+          <xsd:documentation>
+            The search was disallowed per one of the business rules
+            specified within Interconnect.  As such Interconnect
+            disallowed the search which was not fowarded to the PMP
+            system from which disclosure was sought.
+
+            The pmpi:EncryptedData element MUST NOT be present.
+            
+            The PMP Disclosure ID will not be present in this case.
+
+            Interconnect WILL indicate why diclosure was disallowed via
+            the pmpi:PlaintextData element.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      
+      <xsd:enumeration value="error">
+        <xsd:annotation>
+          <xsd:documentation>
+            The disclosure request was transmitted to the PMP but an error 
+            occurred that Interconnect determined. Additional information may 
+            be available in the /pmpi:SearchResponse/pmpi:InterconnectDetail 
+            element.
+
+            The pmpi:EncryptedData element MUST NOT be present.
+
+            The PMP Disclosure ID will not be present in this case.
+
+            The Interconnect system WILL indicate the nature of error via the
+            pmpi:ErrorDetail element as best it can.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      
+      <xsd:enumeration value="pmperror">
+        <xsd:annotation>
+          <xsd:documentation>
+            The disclosure request was received by the PMP but an error occurred
+            that the PMP system was able to detect. 
+
+            The pmpi:EncryptedData element MUST NOT be present.
+
+            If possible, the PMP system SHOULD provide their ID for the Disclosure.
+
+            The PMP system SHOULD indicate the nature of error via the
+            pmpi:PmpErrorDetail element.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      
+      <xsd:enumeration value="refused">
+        <xsd:annotation>
+          <xsd:documentation>
+            The search was processed by the PMP but disclosure is being refused 
+            for a reason determined at the PMP system from which disclosure 
+            was sought.  Additional information may be available in the 
+            pmpi:PmpRefusalDetail element of the pmpi:DisclosureResponse.
+
+            The pmpi:EncryptedData element MUST NOT be present.
+
+            If possible, the PMP system SHOULD provide their ID for the Disclosure.
+
+            The PMP system SHOULD indicate why they refused via the
+            pmpi:PmpRefusalDetail element.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      
+    </xsd:restriction>   
+    
+  </xsd:simpleType>
+</xsd:schema>
+

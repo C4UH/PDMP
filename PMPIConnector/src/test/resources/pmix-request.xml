@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmix:PMPRequest xsi:schemaLocation="http://xml.ijis.org/niem/2.0/ PMIX_NIEM_2.0_Request_Schema.xsd" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pmix="http://xml.ijis.org/niem/2.0/" xmlns:pmp="http://xml.ijis.org/niem/2.0/extension">
+  <pmp:RequestPatient>
+    <nc:PersonBirthDate>
+      <nc:Date>1959-12-26</nc:Date>
+    </nc:PersonBirthDate>
+    <nc:PersonName>
+      <nc:PersonGivenName>Bilbo</nc:PersonGivenName>
+      <nc:PersonSurName>Baggins</nc:PersonSurName>
+    </nc:PersonName>
+  </pmp:RequestPatient>
+</pmix:PMPRequest>

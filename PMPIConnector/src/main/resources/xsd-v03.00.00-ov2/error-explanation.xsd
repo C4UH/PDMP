@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema version="PMP Interconnect v3.0.0-ov2"
+  targetNamespace="http://pmpi.nabp.org/" 
+  elementFormDefault="unqualified" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:pmpi="http://pmpi.nabp.org/">
+
+  <xsd:element name="ErrorExplanation">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Errors" minOccurs="1" maxOccurs="1">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Error" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>
