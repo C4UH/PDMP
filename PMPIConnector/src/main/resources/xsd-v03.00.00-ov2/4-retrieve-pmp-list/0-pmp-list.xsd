@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema version="PMP Interconnect v3.0.0-ov2"
+  targetNamespace="http://pmpi.nabp.org/" 
+  elementFormDefault="qualified" 
+  attributeFormDefault="unqualified"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:pmpi="http://pmpi.nabp.org/" >
+
+  <xsd:include schemaLocation="../xsd/pmpi/pmp-interconnect.xsd" />
+
+  <xsd:element name="Pmps" type="pmpi:PmpsType" />
+
+  <xsd:complexType name="PmpsType">
+    <xsd:sequence>
+      <xsd:element name="Pmp" type="pmpi:PmpType" minOccurs='0' maxOccurs='unbounded' />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="RequiredFieldsType">
+    <xsd:sequence>
+      <xsd:element name="RequiredField" type="pmpi:PmixDataElementsEnumeration" maxOccurs='unbounded' />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="PmpType">
+    <xsd:sequence>
+      <xsd:element name="InterconnectPmpId" type="pmpi:InterconnectPmpIdType" />
+      <xsd:element name="FullName" type="pmpi:PmpFullNameType" />
+      <xsd:element name="DisplayName" type="pmpi:PmpDisplayNameType" />
+      <xsd:element name="RequiredFields" type="pmpi:RequiredFieldsType" minOccurs="0" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>
+

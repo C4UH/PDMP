@@ -1,0 +1,17 @@
+#!/bin/bash
+
+ROOT='.'
+SYN="$ROOT/0-synchronous-report-retrieval"
+ASYN="$ROOT/1-asynchronous-report-delivery"
+KEYS="$ROOT/2-public-key-management"
+PING="$ROOT/3-ping-operations"
+META="$ROOT/4-retrieve-pmp-list"
+PMIX="$ROOT/pmix"
+PMPI="$ROOT/pmpi"
+
+# The command used in validating XML instances against W3C XML Schemas
+XCMD='xmllint -noout -schema' 
+
+# The command used in validating XML instances against ISO Schematrons
+SCMD='../schematron/schematron-validator'
+

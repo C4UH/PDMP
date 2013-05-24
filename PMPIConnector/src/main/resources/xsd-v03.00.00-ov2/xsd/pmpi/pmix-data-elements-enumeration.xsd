@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema version="PMP Interconnect v3.0.0-ov2"
+  targetNamespace="http://pmpi.nabp.org/" 
+  elementFormDefault="qualified" 
+  attributeFormDefault="unqualified"
+  xmlns:pmpi="http://pmpi.nabp.org/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <xsd:simpleType name="PmixDataElementsEnumeration">  
+    <xsd:annotation>
+      <xsd:documentation>
+        These are the values that are found in the PMIX NIEM IEPD that
+        PMP Interconnect uses.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="/pmix:PMPRequest" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPrescriptionDateRange" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPrescriptionDateRange/pmp:RequestPrescriptionDateRangeBegin" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPrescriptionDateRange/pmp:RequestPrescriptionDateRangeEnd" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonBirthDate" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonBirthDate/nc:Date" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonNamePrefixText" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonGivenName" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonMiddleName" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonSurName" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonNameSuffixText" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonFullName" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonSexCode" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonSSNIdentification" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonSSNIdentification/nc:IdentificationID" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonSSNIdentification/nc:IdentificationJurisdictionText" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber/nc:FullTelephoneNumber" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber/nc:FullTelephoneNumber/nc:TelephoneNumberFullID" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactEntity" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationDoingBusinessAsName" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress/nc:LocationStreet" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress/nc:LocationStreet/nc:StreetFullText" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress/nc:LocationCityName" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress/nc:LocationStateUSPostalServiceCode" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress/nc:LocationPostalCode" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress/nc:LocationPostalExtensionCode" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationName" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonStateIssuedIdentifier" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonStateIssuedIdentifier/nc:IdentificationID" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonStateIssuedIdentifier/nc:IdentificationJurisdictionText" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:SpeciesCode" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PatientLocationCode" />
+      <xsd:enumeration value="/pmix:PMPRequest/pmp:RequestPatient/pmp:PatientNameOfAnimalText" />
+    </xsd:restriction> 
+  </xsd:simpleType>
+</xsd:schema>

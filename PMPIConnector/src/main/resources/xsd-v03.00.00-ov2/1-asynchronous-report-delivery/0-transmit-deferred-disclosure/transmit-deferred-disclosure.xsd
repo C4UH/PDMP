@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema version="PMP Interconnect v3.0.0-ov2"
+  targetNamespace="http://pmpi.nabp.org/" 
+  elementFormDefault="qualified" 
+  attributeFormDefault="unqualified"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:pmpi="http://pmpi.nabp.org/"
+  xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+  xmlns:pmix="http://xml.ijis.org/niem/2.0/" 
+  xmlns:pmixcodes="http://xml.ijis.org/pmpcode"
+  xmlns:nc="http://niem.gov/niem/niem-core/2.0" >
+
+  <xsd:import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="../../xsd/pmix/niem/niem-core/2.0/niem-core.xsd" />
+  <xsd:import namespace="http://xml.ijis.org/niem/2.0/" schemaLocation="../../xsd/pmix/niem/PMIX_NIEM_2.0_Request_Schema.xsd" />
+  <xsd:import namespace="http://xml.ijis.org/niem/2.0/extension" schemaLocation="../../xsd/pmix/niem/PMP_NIEM_2.0_Domain_Extension_Schema.xsd" />
+  <xsd:import namespace="http://xml.ijis.org/pmpcode" schemaLocation="../../xsd/pmix/niem/PMIX_Code_Set.xsd" />
+  <xsd:include schemaLocation="../../xsd/pmpi/disclosure-response-type-enumeration.xsd" />
+  <xsd:include schemaLocation="../../xsd/pmpi/pmp-interconnect.xsd" />
+
+  <xsd:element name="DeferredDisclosure" type="pmpi:PmpDisclosureType" />
+
+</xsd:schema>
+
