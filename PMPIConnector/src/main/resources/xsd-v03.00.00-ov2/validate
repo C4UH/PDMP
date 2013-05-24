@@ -1,0 +1,119 @@
+#!/bin/bash
+source ./common
+
+## Search Request 
+echo ""
+echo "---- 0-synchronous-report-retrieval/0-report-request/pmpi-search-request"
+$XCMD $SYN/0-report-request/pmpi-search-request.xsd $SYN/0-report-request/pmpi-search-request.xml
+$XCMD $SYN/0-report-request/pmpi-search-request.xsd $SYN/0-report-request/pmpi-search-request-minimal.xml
+echo ""
+
+## Disclosure Request 
+echo "---- 0-synchronous-report-retrieval/1-disclosure-request/pmpi-disclosure-request"
+$XCMD $SYN/1-disclosure-request/pmpi-disclosure-request.xsd $SYN/1-disclosure-request/pmpi-disclosure-request.xml
+$XCMD $SYN/1-disclosure-request/pmpi-disclosure-request.xsd $SYN/1-disclosure-request/pmpi-disclosure-request-minimal.xml
+echo ""
+
+## Disclosure Responses
+echo "---- 0-synchronous-report-retrieval/1-disclosure-request/pmpi-disclosure-response-complete"
+$XCMD $SYN/1-disclosure-request/pmpi-disclosure-response.xsd $SYN/1-disclosure-request/pmpi-disclosure-response-complete.xml
+$SCMD $SYN/1-disclosure-request/pmpi-disclosure-response-complete.xml $SYN/1-disclosure-request/pmpi-disclosure-response-complete.sch
+$XCMD $SYN/1-disclosure-request/pmpi-disclosure-response.xsd $SYN/1-disclosure-request/pmpi-disclosure-response-complete-minimal.xml
+$SCMD $SYN/1-disclosure-request/pmpi-disclosure-response-complete-minimal.xml $SYN/1-disclosure-request/pmpi-disclosure-response-complete.sch
+echo ""
+
+echo "---- 0-synchronous-report-retrieval/1-disclosure-request/pmpi-disclosure-response-deferred"
+$XCMD $SYN/1-disclosure-request/pmpi-disclosure-response.xsd $SYN/1-disclosure-request/pmpi-disclosure-response-deferred.xml
+$SCMD $SYN/1-disclosure-request/pmpi-disclosure-response-deferred.xml $SYN/1-disclosure-request/pmpi-disclosure-response-deferred.sch
+$XCMD $SYN/1-disclosure-request/pmpi-disclosure-response.xsd $SYN/1-disclosure-request/pmpi-disclosure-response-deferred-minimal.xml
+$SCMD $SYN/1-disclosure-request/pmpi-disclosure-response-deferred-minimal.xml $SYN/1-disclosure-request/pmpi-disclosure-response-deferred.sch
+echo ""
+
+echo "---- 0-synchronous-report-retrieval/1-disclosure-request/pmpi-disclosure-response-disallowed"
+$XCMD $SYN/1-disclosure-request/pmpi-disclosure-response.xsd $SYN/1-disclosure-request/pmpi-disclosure-response-disallowed.xml
+$SCMD $SYN/1-disclosure-request/pmpi-disclosure-response-disallowed.xml $SYN/1-disclosure-request/pmpi-disclosure-response-disallowed.sch
+$XCMD $SYN/1-disclosure-request/pmpi-disclosure-response.xsd $SYN/1-disclosure-request/pmpi-disclosure-response-disallowed-minimal.xml
+$SCMD $SYN/1-disclosure-request/pmpi-disclosure-response-disallowed-minimal.xml $SYN/1-disclosure-request/pmpi-disclosure-response-disallowed.sch
+echo ""
+
+echo "---- 0-synchronous-report-retrieval/1-disclosure-request/pmpi-disclosure-response-error"
+$XCMD $SYN/1-disclosure-request/pmpi-disclosure-response.xsd $SYN/1-disclosure-request/pmpi-disclosure-response-error.xml
+$SCMD $SYN/1-disclosure-request/pmpi-disclosure-response-error.xml $SYN/1-disclosure-request/pmpi-disclosure-response-error.sch
+$XCMD $SYN/1-disclosure-request/pmpi-disclosure-response.xsd $SYN/1-disclosure-request/pmpi-disclosure-response-error-minimal.xml
+$SCMD $SYN/1-disclosure-request/pmpi-disclosure-response-error-minimal.xml $SYN/1-disclosure-request/pmpi-disclosure-response-error.sch
+echo ""
+
+echo "---- 0-synchronous-report-retrieval/1-disclosure-request/pmpi-disclosure-response-pmperror"
+$XCMD $SYN/1-disclosure-request/pmpi-disclosure-response-pmperror.xsd $SYN/1-disclosure-request/pmpi-disclosure-response-pmperror.xml
+$SCMD $SYN/1-disclosure-request/pmpi-disclosure-response-pmperror.xml $SYN/1-disclosure-request/pmpi-disclosure-response-pmperror.sch
+$XCMD $SYN/1-disclosure-request/pmpi-disclosure-response-pmperror.xsd $SYN/1-disclosure-request/pmpi-disclosure-response-pmperror-minimal.xml
+$SCMD $SYN/1-disclosure-request/pmpi-disclosure-response-pmperror-minimal.xml $SYN/1-disclosure-request/pmpi-disclosure-response-pmperror.sch
+echo ""
+
+echo "---- 0-synchronous-report-retrieval/1-disclosure-request/pmpi-disclosure-response-refused"
+$XCMD $SYN/1-disclosure-request/pmpi-disclosure-response.xsd $SYN/1-disclosure-request/pmpi-disclosure-response-refused.xml
+$SCMD $SYN/1-disclosure-request/pmpi-disclosure-response-refused.xml $SYN/1-disclosure-request/pmpi-disclosure-response-refused.sch
+$XCMD $SYN/1-disclosure-request/pmpi-disclosure-response.xsd $SYN/1-disclosure-request/pmpi-disclosure-response-refused-minimal.xml
+$SCMD $SYN/1-disclosure-request/pmpi-disclosure-response-refused-minimal.xml $SYN/1-disclosure-request/pmpi-disclosure-response-refused.sch
+echo ""
+
+## Search Response
+echo "---- 0-synchronous-report-retrieval/0-report-request/pmpi-search-response"
+$XCMD $SYN/0-report-request/pmpi-search-response.xsd $SYN/0-report-request/pmpi-search-response.xml
+$XCMD $SYN/0-report-request/pmpi-search-response.xsd $SYN/0-report-request/pmpi-search-response-minimal.xml
+echo ""
+
+## Transmit Deferred Disclosures
+echo "---- 1-asynchronous-report-delivery/0-transmit-deferred-disclosure-complete"
+$XCMD $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure.xsd $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure-complete.xml
+$SCMD $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure-complete.xml $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure-complete.sch
+$XCMD $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure.xsd $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure-complete-minimal.xml
+$SCMD $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure-complete-minimal.xml $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure-complete.sch
+echo ""
+
+echo "---- 1-asynchronous-report-delivery/0-transmit-deferred-disclosure-refused"
+$XCMD $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure.xsd $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure-refused.xml
+$SCMD $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure-refused.xml $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure-refused.sch
+$XCMD $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure.xsd $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure-refused-minimal.xml
+$SCMD $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure-refused-minimal.xml $ASYN/0-transmit-deferred-disclosure/transmit-deferred-disclosure-refused.sch
+echo ""
+
+## Cancel Deferred Disclosures
+echo "---- 1-asynchronous-report-delivery/1-cancel-deferred-disclosure"
+$XCMD $ASYN/1-cancel-deferred-disclosure/cancel-deferred-disclosure.xsd $ASYN/1-cancel-deferred-disclosure/cancel-deferred-disclosure.xml
+$XCMD $ASYN/1-cancel-deferred-disclosure/cancel-deferred-disclosure.xsd $ASYN/1-cancel-deferred-disclosure/cancel-deferred-disclosure-minimal.xml
+echo ""
+
+# Public Key Management
+echo "---- 2-public-key-management/rsa-public-key"
+$XCMD $KEYS/rsa-public-key.xsd $KEYS/rsa-public-key.xml 
+echo ""
+
+# Ping Operations
+echo "---- 3-ping-operations/0-interconnect-pong"
+$XCMD $PING/0-interconnect-pong.xsd $PING/0-interconnect-pong.xml 
+echo ""
+
+echo "---- 3-ping-operations/1-relayed-pong"
+$XCMD $PING/1-relayed-pong.xsd $PING/1-relayed-pong.xml 
+echo ""
+
+echo "---- 3-ping-operations/2-relayed-pong"
+$XCMD $PING/2-pmp-pong.xsd $PING/2-pmp-pong.xml
+echo ""
+
+# Retrieve PMP List Operations
+echo "---- 4-retrieve-pmp-list/0-pmp-list"
+$XCMD $META/0-pmp-list.xsd $META/0-pmp-list.xml
+echo ""
+
+# Retrieve PMP List Operations
+echo "---- xsd/pmpi/error-explanation"
+$XCMD xsd/pmpi/error-explanation.xsd xsd/pmpi/error-explanation.xml
+echo ""
+
+
+
+echo "----"
+echo ""
+

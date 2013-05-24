@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema version="PMP Interconnect v3.0.0-ov2"
+  targetNamespace="http://pmpi.nabp.org/" 
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified" 
+  xmlns:pmpi="http://pmpi.nabp.org/" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+
+  <xsd:simpleType name="UserRoleTypeEnumeration">
+
+    <xsd:annotation>
+      <xsd:documentation>
+        These are the values that are valid for pmpi:PmpUserRole elements.
+      </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:restriction base="xsd:string">
+
+      <xsd:enumeration value="Patient" />
+
+      <xsd:enumeration value="Research Institute" />
+
+      <xsd:enumeration value="VA">
+        <xsd:annotation>
+          <xsd:documentation>
+            Currently, the VA does not share data with state PMPs. Some
+            PMPs have taken the stance that if the VA does not share
+            data with the state, the state will not share data with the VA.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="IHS">
+        <xsd:annotation>
+          <xsd:documentation>
+            Same as VA
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Medicaid">
+        <xsd:annotation>
+          <xsd:documentation>
+            Some states' laws allow medicaid to get data from the PMP.
+            Some states do not allow this.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Workers Comp">
+        <xsd:annotation>
+          <xsd:documentation>
+            Same as Medicaid.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Child Protection Services">
+        <xsd:annotation>
+          <xsd:documentation>
+            Some states consider Child Protection Services to be law
+            enforcmennt and all all law enforcement to access the PMP.
+            Some states only allow access for drug-related cases.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Pharmacist"/>
+
+      <xsd:enumeration value="Pharmacy Tech">
+        <xsd:annotation>
+          <xsd:documentation>
+            Some states allow pharmacists to have delegates - namely,
+            Pharmacy Techs.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Pharmacy">
+        <xsd:annotation>
+          <xsd:documentation>
+            Some states allow group accounts for a pharmacy. Most states
+            require an individual person to have an account and only
+            that person is permitted to use the account.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Licensed Prescriber's Delegate">
+        <xsd:annotation>
+          <xsd:documentation>
+            This includes RN, PA, etc.
+            A number of states allow a prescriber to have one or more
+            delegates. Some states require the delegate to have some
+            sort of healthcare professional license.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Unlicensed Prescriber's Delegate">
+        <xsd:annotation>
+          <xsd:documentation>
+            This includes MA, Office Manager, etc.  Some states which
+            allow prescriber's to have delegates do not require the
+            delegate to hold a healthcare professional license.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Criminal Investigative Subpoena">
+        <xsd:annotation>
+          <xsd:documentation>
+            There are a number of instances where a subpoena can be used
+            to request information from the PMP. Some states require the
+            subpeona to come from a grand jury, some require it to be in
+            reference to a criminal proceeding and some allow Civil
+            Subpoena's as well.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Civil Investigative Subpoena">
+        <xsd:annotation>
+          <xsd:documentation>
+            See Criminal Investigative Subpoena.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Physician">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Prescriber related role.  Laws vary from
+            state to state in who is permitted to prescribe controlled
+            substances, and further in which prescribers are permitted
+            to access the PMP. The Physician role should be used for MDs
+            and DOs.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Nurse Practitioner">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Prescriber related role. Some states permit a
+            Nurse Practitioner to prescribe controlled substances and
+            therefore also allow them access to the PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Physician's Assistant">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Prescriber related role.  Some states permit
+            Physician's Assistants to prescribe controlled substnaces
+            and therefore also allow them to access the PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Other Prescriber">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Prescriber related role.  This is a catch-all
+            for any other prescriber role that may come up
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="State Police">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role.  Some states
+            are very specific on which law enforcement agencies are
+            permitted to access their PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Local Police">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role. Some states are
+            very specific on which law enforcement agencies are
+            permitted to access their PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="DEA">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role.  Some states
+            are very specific on which law enforcement agencies are
+            permitted to access their PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="FBI">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role. Some states are
+            very specific on which law enforcement agencies are
+            permitted to access their PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="State Attorney General">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role.  Some states
+            are very specific on which law enforcement agencies are
+            permitted to access their PMP. The Attorney General is not
+            law enforcement in some states.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="US Attorney">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role. Some states
+            are very specific on which law enforcement agencies are
+            permitted to access their PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Medical Examiner/Coroner">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role. Some states
+            are very specific on which law enforcement agencies are
+            permitted to access their PMP. Some states may consider a
+            Medical Examiner/Coroner to be a physician.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="ATF">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role. Some states are
+            very specific on which law enforcement agencies are
+            permitted to access their PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="HHS/OIG">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role. Some states are
+            very specific on which law enforcement agencies are
+            permitted to access their PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Homeland Security">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role. Some states are
+            very specific on which law enforcement agencies are
+            permitted to access their PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Probation/Parole">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role. Some states are
+            very specific on which law enforcement agencies are
+            permitted to access their PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Corrections">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role. Some states are
+            very specific on which law enforcement agencies are
+            permitted to access their PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="State Investigative Agencies">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role. Some states are
+            very specific on which law enforcement agencies are
+            permitted to access their PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Drug Task Force">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role. Some states are
+            very specific on which law enforcement agencies are
+            permitted to access their PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Other Law Enforcement">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Law Enforcement related role. Some states are
+            very specific on which law enforcement agencies are
+            permitted to access their PMP.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Grand Jury Subpoena">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Judical related role. See Civil and Criminal
+            Subpoena's.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Drug Courts/Drug Diversion Programs">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Judical related role.  Drug Courts are
+            treated very differently from state to state.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+      <xsd:enumeration value="Court Order">
+        <xsd:annotation>
+          <xsd:documentation>
+            This role is a Judical related role. Some states do not
+            respond to court orders.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>
+

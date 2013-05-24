@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema version="PMP Interconnect v3.0.0-ov2"
+  targetNamespace='http://pmpi.nabp.org/' 
+  elementFormDefault='qualified' 
+  attributeFormDefault='unqualified'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema' 
+  xmlns:pmpi='http://pmpi.nabp.org/'
+  xmlns:pmp='http://xml.ijis.org/niem/2.0/extension'
+  xmlns:pmix='http://xml.ijis.org/niem/2.0/' 
+  xmlns:pmixcodes='http://xml.ijis.org/pmpcode'
+  xmlns:nc='http://niem.gov/niem/niem-core/2.0' >
+
+  <xsd:import namespace='http://niem.gov/niem/niem-core/2.0' schemaLocation='../pmix/niem/niem-core/2.0/niem-core.xsd' />
+  <xsd:import namespace='http://xml.ijis.org/niem/2.0/' schemaLocation='../pmix/niem/PMIX_NIEM_2.0_Request_Schema.xsd' />
+  <xsd:import namespace='http://xml.ijis.org/niem/2.0/extension' schemaLocation='../pmix/niem/PMP_NIEM_2.0_Domain_Extension_Schema.xsd' />
+  <xsd:import namespace='http://xml.ijis.org/pmpcode' schemaLocation='../pmix/niem/PMIX_Code_Set.xsd' />
+  <xsd:include schemaLocation='disclosure-response-type-enumeration.xsd'/>
+  <xsd:include schemaLocation='user-role-type-enumeration.xsd'/>
+  <xsd:include schemaLocation='pmix-data-elements-enumeration.xsd'/>
+
+  <xsd:simpleType name='AesEncryptedDataType'>
+    <xsd:restriction base='xsd:string' />
+  </xsd:simpleType>
+
+  <xsd:simpleType name='DataElementType'>
+    <xsd:restriction base='xsd:string' />
+  </xsd:simpleType>
+
+  <xsd:simpleType name='InterconnectDisclosureIdType'>
+    <xsd:restriction base='xsd:unsignedLong' />
+  </xsd:simpleType>
+
+  <xsd:simpleType name='InterconnectSearchIdType'>
+    <xsd:restriction base='xsd:unsignedLong' />
+  </xsd:simpleType>
+
+  <xsd:simpleType name='InterconnectPmpIdType'>
+    <xsd:restriction base='xsd:unsignedLong' />
+  </xsd:simpleType>
+
+  <xsd:simpleType name='PlaintextDataType'>
+    <xsd:restriction base='xsd:string' />
+  </xsd:simpleType>
+
+  <xsd:simpleType name='PingReceivedType'>
+    <xsd:restriction base='xsd:dateTime' />
+  </xsd:simpleType>
+
+  <xsd:simpleType name='PingRelayedType'>
+    <xsd:restriction base='xsd:dateTime' />
+  </xsd:simpleType>
+
+  <xsd:simpleType name='PmpDisclosureIdType'>
+    <xsd:restriction base='xsd:string'>
+      <xsd:maxLength value='255' />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name='PmpDisplayNameType'>
+    <xsd:restriction base='xsd:string'>
+      <xsd:maxLength value='32' />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name='PmpFullNameType'>
+    <xsd:restriction base='xsd:string'>
+      <xsd:maxLength value='255' />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name='PmpSearchIdType'>
+    <xsd:restriction base='xsd:string'>
+      <xsd:maxLength value='255' />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name='PongReceivedType'>
+    <xsd:restriction base='xsd:dateTime' />
+  </xsd:simpleType>
+
+  <xsd:simpleType name='PongTransmittedType'>
+    <xsd:restriction base='xsd:dateTime' />
+  </xsd:simpleType>
+
+  <xsd:simpleType name='RsaEncryptedAesKeyType'>
+    <xsd:restriction base='xsd:string' />
+  </xsd:simpleType>
+
+  <xsd:simpleType name='RsaPublicKeyType'>
+    <xsd:restriction base='xsd:string' />
+  </xsd:simpleType>
+
+  <xsd:complexType name='DataElementsType'>
+    <xsd:sequence>
+      <xsd:element name='DataElement' type='pmpi:DataElementType' maxOccurs='unbounded' />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name='DisclosingPmpType'>
+    <xsd:sequence>
+      <xsd:element name='InterconnectPmpId' type='pmpi:InterconnectPmpIdType' />
+      <xsd:element name='PmpDisclosureId' type='pmpi:PmpDisclosureIdType' minOccurs='0' />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name='DisclosingPmpOptionalType'>
+    <xsd:sequence>
+      <xsd:element name='InterconnectPmpId' type='pmpi:InterconnectPmpIdType' minOccurs='0' />
+      <xsd:element name='PmpDisclosureId' type='pmpi:PmpDisclosureIdType' minOccurs='0' />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name='DisclosingPmpRequestType' >
+    <xsd:sequence>
+      <xsd:element name="InterconnectPmpId" type="pmpi:InterconnectPmpIdType" maxOccurs="unbounded" />
+      <xsd:element name='RsaEncryptedAesKey' type='pmpi:RsaEncryptedAesKeyType' />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name='EncryptedDataType' >
+    <xsd:sequence>
+      <xsd:element name='RsaEncryptedAesKey' type='pmpi:RsaEncryptedAesKeyType'/>
+      <xsd:element name='AesEncryptedData' type='pmpi:AesEncryptedDataType' />
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="ErrorExplanationType">
+    <xsd:complexContent mixed="true">
+      <xsd:restriction base="xsd:anyType">
+        <xsd:sequence>
+          <xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name='PmpDisclosureType'>
+    <xsd:sequence>
+      <xsd:element name='Type' type='pmpi:DisclosureResponseTypeEnumeration' />      
+      <xsd:element name='InterconnectSearchId' type='pmpi:InterconnectSearchIdType' />
+      <xsd:element name='InterconnectDisclosureId' type='pmpi:InterconnectDisclosureIdType' />
+      <xsd:element name="SearchingPmp" type="pmpi:SearchingPmpType" />
+      <xsd:element name="DisclosingPmp" type="pmpi:DisclosingPmpType" />
+      <xsd:choice>
+        <xsd:element name='EncryptedData' type='pmpi:EncryptedDataType' />
+        <xsd:element name='PlaintextData' type='pmpi:PlaintextDataType' minOccurs='0'/>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name='PmpErrorDisclosureType'>
+    <xsd:sequence>
+      <xsd:element name='Type' type='pmpi:DisclosureResponseTypeEnumeration' />      
+      <xsd:element name='InterconnectSearchId' type='pmpi:InterconnectSearchIdType' minOccurs='0' />
+      <xsd:element name='InterconnectDisclosureId' type='pmpi:InterconnectDisclosureIdType' minOccurs='0' />
+      <xsd:element name="SearchingPmp" type='pmpi:SearchingPmpOptionalType' minOccurs='0' />
+      <xsd:element name="DisclosingPmp" type='pmpi:DisclosingPmpOptionalType' minOccurs='0' />
+      <xsd:element name='PlaintextData' type='pmpi:PlaintextDataType' minOccurs='0'/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name='PmpInterconnectType'>
+    <xsd:sequence>
+      <xsd:element name='InterconnectSearchId' type='pmpi:InterconnectSearchIdType' />
+      <xsd:element name='InterconnectDisclosureId' type='pmpi:InterconnectDisclosureIdType' />
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name='SearchParametersType'>
+    <xsd:sequence>
+      <xsd:element name='DataElements' type='pmpi:DataElementsType' />
+      <xsd:element name='AesEncryptedData' type='pmpi:AesEncryptedDataType' />
+    </xsd:sequence>
+  </xsd:complexType> 
+  
+  <xsd:complexType name='SearchingPmpType'>
+    <xsd:sequence>
+      <xsd:element name='InterconnectPmpId' type='pmpi:InterconnectPmpIdType' />
+      <xsd:element name='PmpUserRole' type='pmpi:UserRoleTypeEnumeration' />
+      <xsd:element name='PmpSearchId' type='pmpi:PmpSearchIdType' minOccurs='0' />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name='SearchingPmpOptionalType'>
+    <xsd:sequence>
+      <xsd:element name='InterconnectPmpId' type='pmpi:InterconnectPmpIdType' minOccurs='0' />
+      <xsd:element name='PmpUserRole' type='pmpi:UserRoleTypeEnumeration' minOccurs='0' />
+      <xsd:element name='PmpSearchId' type='pmpi:PmpSearchIdType' minOccurs='0' />
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>
+
