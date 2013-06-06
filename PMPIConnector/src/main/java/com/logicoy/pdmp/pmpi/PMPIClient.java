@@ -1,7 +1,19 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+   Copyright 2013 Collaborative For Universal Health (C4UH), Logicoy Inc.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  */
+
 
 package com.logicoy.pdmp.pmpi;
 
@@ -78,8 +90,7 @@ public class PMPIClient {
                 
 
 
-                //TODO
-                /*XMLValidator validate_pmix_request = new XMLValidator( this.getClass().getClassLoader().getResourceAsStream("xsd-v03.00.00-ov2/xsd/pmix/niem/PMIX_NIEM_2.0_Request_Schema.xsd"),"xsd-v03.00.00-ov2/xsd/pmix/niem/");
+                /*XMLValidator validate_pmix_request = new XMLValidator( this.getClass().getClassLoader().getResourceAsStream("xsd-v03.00.00-ov2/xsd/pmix/niem/PMIX_NIEM_2.0_Request_Schema.xsd"));
                 if (!validate_pmix_request.isXMLValid(new StreamSource(new StringReader(PmixRequest))))
                 {
                     log.severe("Returned PMIX xml is not valid : " + validate_pmix_request.getValidatResults() + "\r\n" + PmixRequest);
@@ -111,13 +122,12 @@ public class PMPIClient {
                                                                                       toInterconnectId,
                                                                                       PmixRequest);
 
-                //TODO
-                /*XMLValidator searchRequestXmlValidator = new XMLValidator(this.getClass().getClassLoader().getResource("xsd-v03.00.00-ov2/0-synchronous-report-retrieval/0-report-request/pmpi-search-request.xsd"),"xsd-v03.00.00-ov2/0-synchronous-report-retrieval/0-report-request/");
+                /*XMLValidator searchRequestXmlValidator = new XMLValidator(this.getClass().getClassLoader().getResource("xsd-v03.00.00-ov2/0-synchronous-report-retrieval/0-report-request/pmpi-search-request.xsd"));
                 if (!searchRequestXmlValidator.isXMLValid(new StreamSource(new StringReader(PMPIRequest))))
                 {
                     log.severe("Generated request is invalid : " + searchRequestXmlValidator.getValidatResults() + "\r\n" + PMPIRequest);
                     throw new RuntimeException("PMPI request xml is not valid :\r\n" + searchRequestXmlValidator.getValidatResults());
-                 }*/
+                }*/
 
 
                 log.info(" Constructed PMPI Request :  " + PMPIRequest);
@@ -131,6 +141,7 @@ public class PMPIClient {
 
                 PmpDisclosuresType disclosures = JAXB.unmarshal(new StreamSource(new StringReader(resp.getServerResponse())), PmpDisclosuresType.class);
                 PmpDisclosureType disclosure = disclosures.getPmpDisclosure().get(0);
+                
                 //Process the response:
                 if (disclosure.getType() == DisclosureResponseTypeEnumeration.COMPLETE)
                 {
@@ -142,7 +153,6 @@ public class PMPIClient {
                     String PMIXResponseXml = enc.getAES256Cipher(disclosure.getEncryptedData().getAesEncryptedData(), rsaDecryptedPassword, true);
                     PMIXResponseXml = PMIXResponseXml.trim();
                     log.info("PMIXResponseXml-->>>>" + PMIXResponseXml + "<<<<--");
-                    //TODO
                     /*XMLValidator pmixResponseValidator = new XMLValidator( this.getClass().getClassLoader().getResource("xsd-v03.00.00-ov2/xsd/pmix/niem/PMIX_NIEM_2.0_PMP_Prescription_Report.xsd"));
                     if (!pmixResponseValidator.isXMLValid(new StreamSource(new StringReader(PMIXResponseXml))))
                     {
