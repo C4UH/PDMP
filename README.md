@@ -25,8 +25,10 @@ FAQ #1 - isn't C4UH just another HIE?
 
 Answer - Not at all.  We have NO Man In The Middle here.  Each member user has full
 control of when, who and what, for ALL interactions.  However, we expect that, over
-time, many HIE's and large provider systems seeking to create Clinical Data Repositories
-and Big Data Warehouses will come to know our project as "my best friend for integration."
+time, many HIE sponsors and vendors, as well as large provider systems seeking to create
+Clinical Data Repositories and Big Data Warehouses will come to know the C4UH  project as
+"my best friend for integration."
+
 Why?  With baked in full compliance for CONNECT Open Source, Direct Project, HL7, IHE, CDA,
 C-CDA, CCR, and PDF/healthcare, the broader community will realize that one quick and simple
 method to "just integrate now" with radically reduced initial and sustaining costs will
