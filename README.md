@@ -33,8 +33,8 @@ Why?  This C4UH "PDMP Project" incorporates CONNECT Open Source, Direct Project,
 Health data standards from www.phdsc.org ), IHE, CDA, C-CDA, CCR, and PDF/healthcare as built-in
 methods.  We anticipate that our member community will find that one quick and simple method to
 "just integrate now" can radically reduced initial and sustaining costs. The benefit?  Reduction
-or elimination of many old barriers and quick, affordable the adoption of HIE efforts by rural
-and white space providers, and all other health care stakeholders.
+or elimination of many old barriers and quick, affordable adoption of HIE efforts by rural and
+white space providers, as well as other health care stakeholders.
 
 Clearly, we are all ready, as members of the global health community, to have a few things
 that are simpler, easier, and less costly to help achieve HIE.  C4UH hopes to share One Good Thing
