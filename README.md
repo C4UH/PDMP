@@ -29,10 +29,11 @@ time, many HIE sponsors and vendors, as well as large provider systems seeking t
 Clinical Data Repositories and Big Data Warehouses will come to know the C4UH  project as
 "my best friend for integration."
 
-Why?  With baked in full compliance for CONNECT Open Source, Direct Project, HL7, IHE, CDA,
-C-CDA, CCR, and PDF/healthcare, the broader community will realize that one quick and simple
-method to "just integrate now" can radically reduced initial and sustaining costs. The benefit?
-Reduction or elimination of many old barriers and speed the adoption of HIE.
+Why?  This C4UH "PDMP Project" incorporates CONNECT Open Source, Direct Project, HL7, IHE, CDA,
+C-CDA, CCR, and PDF/healthcare as built-in methods.  We anticipate that our member community
+will find that one quick and simple method to "just integrate now" can radically reduced initial
+and sustaining costs. The benefit?  Reduction or elimination of many old barriers and quick,
+affordable the adoption of HIE efforts by rural and white space providers, among others.
 
 Clearly, we are all ready, as members of the global health community, to have a few things
 that are simpler, easier, and less costly in creating HIE.  C4UH hopes to provide One Good Thing
