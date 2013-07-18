@@ -3,7 +3,7 @@ PDMP
 
 PDMP Acceleration Tools for Pharmacy Boards, Hospitals &amp; Physicians
 
-We're very grateful to and pleased to acknowlege the program that sparked our
+We're very grateful for and pleased to acknowlege the program that sparked our
 "innovation in simplicity" - http://www.healthit.gov/pdmp/PDMPConnect/Pilots 
 
 Using Patient Admit/Schedule Trigger as the Go Button, the C4UH project returns
