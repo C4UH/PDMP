@@ -31,8 +31,8 @@ Clinical Data Repositories and Big Data Warehouses will come to know the C4UH  p
 
 Why?  With baked in full compliance for CONNECT Open Source, Direct Project, HL7, IHE, CDA,
 C-CDA, CCR, and PDF/healthcare, the broader community will realize that one quick and simple
-method to "just integrate now" with radically reduced initial and sustaining costs will
-reduce/eliminate many old barriers and speed the adoption of HIE.
+method to "just integrate now" can radically reduced initial and sustaining costs. The benefit?
+Reduction or elimination of many old barriers and speed the adoption of HIE.
 
 Clearly, we are all ready, as members of the global health community, to have a few things
 that are simpler, easier, and less costly in creating HIE.  C4UH hopes to provide One Good Thing
