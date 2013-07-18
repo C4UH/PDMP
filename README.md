@@ -22,6 +22,7 @@ turns out that this works perfectly well for any two providers, not otherwise co
 who wish to collaborate in care on a specific patient or community of patients.
 
 FAQ #1 - isn't C4UH just another HIE?
+
 Answer - Not at all.  We have NO Man In The Middle here.  Each member user has full
 control of when, who and what, for ALL interactions.  Members are, in effect, acting
 as "their own HIE" in any use of C4UH tools and services.
