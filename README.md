@@ -22,6 +22,7 @@ turns out that this works perfectly well for any two providers, not otherwise co
 who wish to collaborate in care on a specific patient or community of patients.
 
 FAQ #1 - is C4UH and HIE?
+
 Answer - Not at all.  We have NO Man In The Middle here.  Each member user has full
 control of when, who and what, for ALL interactions.  However, we expect that, over
 time, many HIE's and large provider systems seeking to create Clinical Data Repositories
