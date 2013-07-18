@@ -32,7 +32,7 @@ Clinical Data Repositories and Big Data Warehouses will come to know the C4UH pr
 Why?  This C4UH "PDMP Project" incorporates CONNECT Open Source, Direct Project, HL7 (esp. Public
 Health data standards from www.phdsc.org ), IHE, CDA, C-CDA, CCR, and PDF/healthcare as built-in
 methods.  We anticipate that our member community will find that one quick and simple method to
-"just integrate now" can radically reduced initial and sustaining costs. The benefit?  Reduction
+"just integrate now" can radically reduce initial and sustaining costs. The benefit?  Reduction
 or elimination of many old barriers and quick, affordable adoption of HIE efforts by rural and
 white space providers, as well as other health care stakeholders.
 
