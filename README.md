@@ -16,7 +16,7 @@ secure messaging, and is automatically deposited into the EHR.
 
 The intention was always to offer a "Swiss Army Knife" kind of toolset to help the
 rural and underserved communities, and others who might find their own advantage in 
-this type of method.  As a result, we architected the solution to serve ANY need that
+this method.  As a result, we architected the C4UH solution to serve ANY need that
 a provider and a state or federal agency might have to exchange some data.  It also
 turns out that this works perfectly well for any two providers, not otherwise connected,
 who wish to collaborate in care on a specific patient or community of patients.
