@@ -4,7 +4,7 @@ PDMP
 PDMP Acceleration Tools for Pharmacy Boards, Hospitals &amp; Physicians
 
 We're very grateful for and pleased to acknowlege the program that sparked our
-"innovation in simplicity" - http://www.healthit.gov/pdmp/PDMPConnect/Pilots 
+"innovation in simplicity" - [http://www.healthit.gov/pdmp/PDMPConnect/Pilots](https://www.healthit.gov/sites/default/files/connecting_for_impact-final-508.pdf) 
 
 Using Patient Admit/Schedule Trigger as the Go Button, the C4UH project returns
 PDMP Reports right into the provider's Certified EHR.  Or, the Reports can also
